@@ -27,6 +27,6 @@ node {
     }
     
     stage("kubernetes deployment"){
-        sh 'kubectl apply -f k8s-spring-boot-deployment.yml'
+        sh 'kubectl apply -f k8s-spring-boot-deployment.yml -n jhooq'
     }
 } 
