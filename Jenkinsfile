@@ -19,7 +19,7 @@ node {
     }
 
     withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
-        sh 'docker login -u ozhersh@gmail.com -p $PASSWORD'
+        sh 'docker login -u 037624764 -p $PASSWORD'
     }
 
     stage("Push Image to Docker Hub"){
