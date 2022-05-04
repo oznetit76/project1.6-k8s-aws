@@ -28,7 +28,7 @@ node {
     
      stage('List pods') {
      withKubeConfig([credentialsId: 'eks-config']) {   
-        sh './kubectl get pods'
+        sh './kubectl get pods -n kube-system'
         }
     }
 
