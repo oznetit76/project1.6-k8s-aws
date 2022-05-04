@@ -24,6 +24,7 @@ node {
 
     stage('publish docker') {
         withCredentials([usernamePassword(credentialsId: 'myregistry-login', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
+        }
     }
     stage("Push Image to Docker Hub"){
         sh 'docker push  037624764/jhooq-docker-demo:jhooq-docker-demo'
