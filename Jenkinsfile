@@ -28,11 +28,11 @@ node {
     
      stage('List pods') {
      withKubeConfig([credentialsId: 'eks-config']) {   
-        sh 'kubectl get po'
+        sh './kubectl get pods'
         }
     }
 
     stage("kubernetes deployment"){
-        sh 'kubectl apply -f k8s-spring-boot-deployment.yml -n jhooq'
+        sh './kubectl apply -f k8s-spring-boot-deployment.yml -n jhooq'
     }
 } 
