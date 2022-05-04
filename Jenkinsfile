@@ -26,7 +26,7 @@ node {
         sh 'docker push  037624764/jhooq-docker-demo:jhooq-docker-demo'
     }
     
-     stage('List pods') {
-       sh './kubectl get pods -n kube-system'  
+   stage("kubernetes deployment"){
+        sh './kubectl apply -f k8s-spring-boot-deployment.yml -n jhooq'
     }
 } 
