@@ -23,7 +23,7 @@ node {
     }
 
     stage('publish docker') {
-        withCredentials([usernamePassword(credentialsId: 'myregistry-login', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
+        withCredentials([usernamePassword(credentialsId: 'DOCKER_HUB_PASSWORD', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
         }
     }
     stage("Push Image to Docker Hub"){
