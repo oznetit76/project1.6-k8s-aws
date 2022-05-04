@@ -29,8 +29,4 @@ node {
      stage('List pods') {
        sh './kubectl get pods -n kube-system'  
     }
-
-    stage("kubernetes deployment"){
-        sh './kubectl apply -f k8s-spring-boot-deployment.yml -n jhooq'
-    }
 } 
