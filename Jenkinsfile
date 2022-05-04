@@ -29,14 +29,13 @@ node {
         sh 'docker push  037624764/jhooq-docker-demo:jhooq-docker-demo'
     }
     
-    stage('List pods') {
-    withKubeConfig([credentialsId: 'kubernetes-config']) {
+     stage('List pods') {
+        withKubeConfig([credentialsId: 'kubernetes-config']) {
         sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'  
         sh 'chmod u+x ./kubectl'  
         sh './kubectl get pods'
     }
-
-    // stage("kubernetes deployment"){
-    //     sh 'kubectl apply -f k8s-spring-boot-deployment.yml -n jhooq'
-//     }
+    stage("kubernetes deployment"){
+        sh 'kubectl apply -f k8s-spring-boot-deployment.yml -n jhooq'
+    }
 } 
